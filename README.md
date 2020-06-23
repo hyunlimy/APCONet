@@ -1,4 +1,4 @@
-APCONet: <br/> AI model for arterial pressure waveform derived cardiac output algorithm
+APCONet: <br/> AI model for arterial pressure waveform derived cardiac output
 ----------------------------------------------------
 This repository is the official python implementation of APCONet-v1.
 
@@ -36,6 +36,10 @@ Note that if you do not specify the directory of `$DATASET_DIR`, then the model 
 ```
 python3 apconet.py --model_path $MODEl_PATH --dataset_path $DATASET_PATH
 ```
+
+## Sample Results
+![](example_results.png)
+
 
 ## Citation
 Not specified yet
