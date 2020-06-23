@@ -1,4 +1,4 @@
-APCONet: <br/> AI model for arterial pressure waveform derived cardiac output algorithm
+APCONet: <br/> AI model for arterial pressure waveform derived cardiac output
 ----------------------------------------------------
 This repository is the official python implementation of APCONet-v1.
 
@@ -10,6 +10,8 @@ This repository is the official python implementation of APCONet-v1.
 > * Chul-Woo Jung (*[VitalLab](https://vitaldb.net/)*, SNUH, South Korea)
 > * [Min-Soo Kim](http://infolab.kaist.ac.kr/members/Min-Soo%20Kim/) 
 (*[InfoLab](http://infolab.kaist.ac.kr/)*, KAIST, South Korea)
+
+---
 
 APCONet is an end-to-end beat-to-beat deep learning model for Stroke Volume monitoring.<br/>
 It predicts Stroke Volume from 100Hz 20-second of arterial blood pressure and demographic information (age, sex, height weights).<br/>
