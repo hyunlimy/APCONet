@@ -23,7 +23,7 @@ It predicts Stroke Volume from 100Hz 20-second of arterial blood pressure and de
 > If you are new to Vital Recorder, please refer to the [demo](https://vitaldb.net/web-monitoring/) 
 > or figure out what you can do with Vital Recorder from the [Vital Recorder Paper](https://www.nature.com/articles/s41598-018-20062-4). 
 > <br><br>
-> :bangbang: Warning<br>
+> :bangbang: **Warning**<br>
 > Researches using APCONet web-monitoring system without our permission are **STRICTLY NOT ALLOWED**. 
 > APCONet for web monitoring system might be updated or replaced for improvement without any announcements.
 > We do not guarantees the APCONet's consistency.
