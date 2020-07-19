@@ -32,6 +32,7 @@ It predicts Stroke Volume from 100Hz 20-second of arterial blood pressure and de
 ## Dataset
 We share a de-identified dataset of pre-processed arterial blood pressure waveform and demographic information, 
 and its corresponding pulmonary artery catheter derived stroke volume which were used for tuning APCONet.<br/>
+You can download the data [here](https://drive.google.com/drive/folders/10PXC6Izwosqz5gY_4XctWlHqS6hVTiz-?usp=sharing).<br/>
 Other full data which were used for pre-training is available upon request at [VitalDB databank](https://vitaldb.net/data-bank/).<br/>
 
 ## Model Inference
