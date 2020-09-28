@@ -26,7 +26,7 @@ def load_datasets(dataset_dir, version, custom_set = False):
         with open('{}/np_w_{}'.format(dataset_dir, version), 'rb') as f:
             all_w = pickle.load(f)
 
-        with open('{}/np_svs_{}'.format(dataset_dir, version), 'rb') as f:
+        with open('{}/np_sv_{}'.format(dataset_dir, version), 'rb') as f:
             all_svs = pickle.load(f)
 
         with open('{}/np_a_{}'.format(dataset_dir, version), 'rb') as f:
