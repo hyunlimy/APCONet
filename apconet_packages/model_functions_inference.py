@@ -208,6 +208,76 @@ def find_spatialnl_layers_pt(_inception):
             inds.append(i)
     return inds
 
+
+class EarlyStopping:
+    """Early stops the training if validation loss doesn't improve after a given patience."""
+    def __init__(self, patience=7, verbose=False, filewrite=None):
+        """
+        Args:
+            patience (int): How long to wait after last time validation loss improved.
+                            Default: 7
+            verbose (bool): If True, prints a message for each validation loss improvement.
+                            Default: False
+        """
+        self.patience = patience
+        self.verbose = verbose
+        self.counter = 0
+        self.best_score = None
+        self.early_stop = False
+        self.val_loss_min = np.Inf
+        self.checkpoint = None
+        self.checkpoint_dir = None
+        if filewrite is None:
+            self.filewriter = None
+        else:
+            self.filewriter = filewrite
+
+    def __call__(self, val_loss, model, directory):
+
+        score = -val_loss
+
+        if self.best_score is None:
+            self.best_score = score
+            self.save_checkpoint(val_loss, model, directory)
+        elif score < self.best_score:
+            self.counter += 1
+
+            print(f'EarlyStopping counter: {self.counter} out of {self.patience}')
+            if self.filewriter is not None:
+                print(f'EarlyStopping counter: {self.counter} out of {self.patience}',
+                      file=self.filewriter)
+
+            if self.counter >= self.patience:
+                self.early_stop = True
+        else:
+            self.best_score = score
+            self.save_checkpoint(val_loss, model, directory)
+            self.counter = 0
+
+    def force_init_counter(self):
+        self.counter = 0
+        self.early_stop = False
+
+    def save_checkpoint(self, val_loss, model, directory):
+        '''Saves model when validation loss decrease.'''
+        if self.verbose:
+
+            print(f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...')
+            if self.filewriter is not None:
+                print(f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...',
+                      file=self.filewriter)
+
+        try:
+            for deloa in glob.glob(directory[:-11]+'*'):
+                os.remove(deloa)
+        except:
+            None
+        torch.save(model, directory)
+        self.val_loss_min = val_loss
+        self.checkpoint_dir = directory
+        self.checkpoint = model
+
+
 ###############################################################################
 # Inception Net Modules
 ###############################################################################
