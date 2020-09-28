@@ -35,15 +35,33 @@ and its corresponding pulmonary artery catheter derived stroke volume which were
 You can download the data [here](https://drive.google.com/drive/folders/10PXC6Izwosqz5gY_4XctWlHqS6hVTiz-?usp=sharing).<br/>
 Other full data which were used for pre-training is available upon request at [VitalDB databank](https://vitaldb.net/data-bank/).<br/>
 
-## Model Inference
-To evaluate the model, you can run the below script. <br/>
-`$MODEL_PATH` is the checkpoint of the model used for inference, and `$DATASET_DIR` is the root directory of the preprocessed dataset. <br/>
-You can download the pretrained APCONet from [here](). <br/>
-Dataset must be numpy array of shape (batch, 2000) and shape of (batch, 4) for wave and demographic information respectively. <br/>
-Note that if you do not specify the directory of `$DATASET_DIR`, then the model will automatically used `sample_wave.np` and `sample_ashw.np`.<br/>
+## Model Training
+To train the model, you can run the below script. <br/>
+Dataset must be named and shaped as follows: <br/>
+
+Variable Name     | Data Type   | Shape of data | Description
+------------------|-------------|---------------|------------
+`np_w_$VERSION$`  | Numpy array | (batch, 2000) | abp wave data with 20 second segment
+`np_sv_$VERSION$` | Numpy array | (batch, )     | target stroke volume data
+`np_a_$VERSION$`  | Numpy array | (batch, 4)    | demographic data with order of age, sex, weight, height
+`np_c_$VERSION$`  | Numpy array | (batch, )     | chart names of each data point (it is used to split validation set)
+
+`$VERSION$` indicates the version of dataset, which for convenience of dataset management <br/>
+Default value of `$VERSION$` is `200101` of `yymmdd` format. <br/>
 
 ```
-python3 apconet.py --model_path $MODEl_PATH --dataset_path $DATASET_PATH
+python3 apconet.py --mode train
+```
+
+
+## Model Inference
+To evaluate the model, you can run the below script. <br/>
+You can download the pretrained APCONet from [here](). <br/>
+Dataset must be numpy array of shape (batch, 2000) and shape of (batch, 4) for wave and demographic information respectively. <br/>
+Note that if you do not specify the directory of your custom dataset, then the model will automatically used `sample_wave.np` and `sample_ashw.np`.<br/>
+
+```
+python3 apconet.py --mode test
 ```
 
 ## Sample Results
