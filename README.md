@@ -3,7 +3,7 @@ APCONet: <br/> AI model for arterial pressure waveform derived cardiac output
 This repository is the official python implementation of APCONet-v1.
 
 > Author: [Hyun-Lim Yang](https://sites.google.com/view/hyunlim-yang) 
-(*[InfoLab](http://infolab.kaist.ac.kr/)*, DGIST, South Korea) <br/>
+(*[VitalLab](https://vitallab.ai/)*, SNUH, South Korea) <br/>
 
 > Credits: <br/>
 > * Hyung-Chul Lee (*[VitalLab](https://vitaldb.net/)*, SNUH, South Korea)
