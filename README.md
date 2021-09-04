@@ -69,8 +69,4 @@ python3 apconet.py --mode test
 
 
 ## Citation
-Yang H, Jung C, Yang SM, Kim M, Shim S, Lee KH, Lee H
-Development and Validation of an Arterial Pressure-Based Cardiac Output Algorithm Using a Convolutional Neural Network: Retrospective Study Based on Prospective Registry Data
-JMIR Med Inform 2021;9(8):e24762
-doi: 10.2196/24762
-PMID: 34398790
+Yang, H. L., Jung, C. W., Yang, S. M., Kim, M. S., Shim, S., Lee, K. H., & Lee, H. C. (2021). Development and Validation of an Arterial Pressure-Based Cardiac Output Algorithm Using a Convolutional Neural Network: Retrospective Study Based on Prospective Registry Data. JMIR Medical Informatics, 9(8), e24762.
