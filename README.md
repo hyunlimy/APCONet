@@ -56,7 +56,7 @@ python3 apconet.py --mode train
 
 ## Model Inference
 To evaluate the model, you can run the below script. <br/>
-You can download the pretrained APCONet from [here](). <br/>
+You can download the pretrained APCONet from [here](https://drive.google.com/drive/folders/10PXC6Izwosqz5gY_4XctWlHqS6hVTiz-?usp=sharing). <br/>
 Dataset must be numpy array of shape (batch, 2000) and shape of (batch, 4) for wave and demographic information respectively. <br/>
 Note that if you do not specify the directory of your custom dataset, then the model will automatically used `sample_wave.np` and `sample_ashw.np`.<br/>
 
