@@ -12,6 +12,21 @@ This repository is the official python implementation of APCONet-v1.
 (*[InfoLab](http://infolab.kaist.ac.kr/)*, KAIST, South Korea)
 
 ---
+> [!NOTE]
+> Our codes and models are now fully available via the pyvital package, an open-source Python package. <br/>
+> You can find the .pth file for pretrained weight in the following link (as sv_dlapco): <br/>
+> [https://github.com/vitaldb/pyvital/tree/master/pyvital/filters](https://github.com/vitaldb/pyvital/blob/master/pyvital/filters/sv_dlapco.py)
+> 
+> And, you can see the latest PyPI via pip. <br/>
+> [https://pypi.org/project/pyvital/](https://pypi.org/project/pyvital/)
+>
+> For detailed instructions on how to use filters, please refer to the examples below. <br/>
+> [https://github.com/vitaldb/examples/blob/master/pyvital.ipynb](https://github.com/vitaldb/examples/blob/master/pyvital.ipynb)
+> 
+> Just use pip to install pyvital and enjoy APCONet!
+
+
+---
 
 APCONet is an end-to-end beat-to-beat deep learning model for Stroke Volume monitoring.<br/>
 It predicts Stroke Volume from 100Hz 20-second of arterial blood pressure and demographic information (age, sex, height weights).<br/>
@@ -56,7 +71,7 @@ python3 apconet.py --mode train
 
 ## Model Inference
 To evaluate the model, you can run the below script. <br/>
-You can download the pretrained APCONet from [here](https://drive.google.com/drive/folders/10PXC6Izwosqz5gY_4XctWlHqS6hVTiz-?usp=sharing). <br/>
+You can download the pretrained APCONet from [here (code)](https://github.com/vitaldb/pyvital/blob/master/pyvital/filters/sv_dlapco.py), and [here (weight)](https://github.com/vitaldb/pyvital/blob/master/pyvital/filters/model_dlapco_v1.pth). <br/>
 Dataset must be numpy array of shape (batch, 2000) and shape of (batch, 4) for wave and demographic information respectively. <br/>
 Note that if you do not specify the directory of your custom dataset, then the model will automatically used `sample_wave.np` and `sample_ashw.np`.<br/>
 
